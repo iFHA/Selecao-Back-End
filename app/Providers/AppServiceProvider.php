@@ -2,6 +2,8 @@
 
 namespace App\Providers;
 
+use App\Models\Comment;
+use App\Observers\CommentObserver;
 use App\Repositories\Contracts\CommentRepository;
 use App\Repositories\Contracts\Impl\Eloquent\CommentEloquentORMRepository;
 use App\Repositories\Contracts\Impl\Eloquent\UserEloquentORMRepository;
@@ -28,6 +30,6 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        Comment::observe(CommentObserver::class);
     }
 }
