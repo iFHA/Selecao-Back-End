@@ -181,3 +181,4 @@ php artisan db:seed
 php artisan test
 ```
 O servidor de desenvolvimento poderá ser acessado por meio do endereço http://127.0.0.1:8989
+E a api por meio do endereço http://127.0.0.1:8989/api
