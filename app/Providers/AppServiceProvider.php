@@ -2,6 +2,10 @@
 
 namespace App\Providers;
 
+use App\Repositories\Contracts\CommentRepository;
+use App\Repositories\Contracts\Impl\Eloquent\CommentEloquentORMRepository;
+use App\Repositories\Contracts\Impl\Eloquent\UserEloquentORMRepository;
+use App\Repositories\Contracts\UserRepository;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -13,7 +17,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        $this->app->bind(UserRepository::class, UserEloquentORMRepository::class);
+        $this->app->bind(CommentRepository::class, CommentEloquentORMRepository::class);
     }
 
     /**
