@@ -1,0 +1,28 @@
+ip: 192.168.56.56
+memory: 2048
+cpus: 2
+provider: virtualbox
+folders:
+    -
+        map: /path/to/the/project
+        to: /home/vagrant/code
+sites:
+    -
+        map: homestead.test
+        to: /home/vagrant/code/public
+databases:
+    - homestead
+features:
+    -
+        mariadb: false
+    -
+        postgresql: false
+    -
+        ohmyzsh: false
+    -
+        webdriver: false
+services:
+    -
+        enabled: [mysql]
+name: selecao-back-end
+hostname: selecao-back-end
