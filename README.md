@@ -125,67 +125,7 @@ Foram disponibilidados na raiz desse projeto arquivos de "collection" e "environ
 ## Considerações Finais
 Este sistema foi desenvolvido com foco em segurança e desempenho, utilizando boas práticas como a criptografia de senhas e a autenticação via token. A implementação de testes automatizados garante que as funcionalidades sejam validadas de forma contínua. A estrutura modular do código facilita a manutenção e a expansão do sistema.
 
-## Extra 1
-## Como Rodar o Projeto Com Homestead
-
-1. Clone o repositório:
-```sh
-git clone https://github.com/iFHA/Selecao-Back-End.git
-```
-2. Acesse a pasta do projeto
-```sh
-cd Selecao-Back-End/
-```
-3. crie o arquivo Homestead.yaml
-```sh
-cp Homestead.yaml.example Homestead.yaml
-```
-4. Configure o arquivo Homestead.yaml com os caminhos e detalhes adequados para o seu ambiente, como por exemplo, na linha 7 do arquivo Homestead.yaml ajuste o valor da propriedade "map:" para o caminho absoluto do projeto na sua máquina.
-
-5. Inicie a máquina virtual com o comando:
-```sh
-vagrant up
-```
-6. Acesse a máquina virtual:
-```sh
-vagrant ssh
-```
-7. Dentro da máquina virtual, navegue até o diretório do projeto
-```sh
-cd code
-```
-8. Instale as dependências do projeto:
-```sh
-composer install
-```
-9. Renomeie o arquivo .env.example para .env e configure-o com suas credenciais do banco de dados:
-```dosini
-DB_CONNECTION=mysql
-DB_HOST=127.0.0.1
-DB_PORT=3306
-DB_DATABASE=homestead
-DB_USERNAME=homestead
-DB_PASSWORD=secret
-```
-Gere a chave do projeto
-```sh
-php artisan key:generate
-```
-10. Execute as migrações para criar as tabelas necessárias:
-```sh
-php artisan migrate
-```
-11. Também pode ser feito um seed após executar as migrations, que irá gerar um usuário admin(email "admin@gmail.com" e senha "password") e alguns comentários gerados pela biblioteca faker
-```sh
-php artisan db:seed
-```
-12. Para rodar os testes automatizados com PHPUnit:
-```sh
-php artisan test
-```
-O servidor de desenvolvimento poderá ser acessado por meio do ip configurado no arquivo Homestead.yaml. Se esse trecho não tiver sido alterado, você terá acesso ao projeto através do ip: 192.168.56.56.
-
-## Extra 2
+## Extra
 ## Como Rodar o Projeto Com Docker Compose
 
 1. Clone o projeto
