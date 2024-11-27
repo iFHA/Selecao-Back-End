@@ -128,12 +128,12 @@
 									}
 								},
 								"url": {
-									"raw": "{{baseUrl}}/changePassword",
+									"raw": "{{baseUrl}}/change-password",
 									"host": [
 										"{{baseUrl}}"
 									],
 									"path": [
-										"changePassword"
+										"change-password"
 									]
 								}
 							},

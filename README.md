@@ -63,7 +63,7 @@ Este sistema permite a gestão de usuários e comentários. Os usuários podem s
 ### Rota de Usuário
 - **GET** `/api/me`: Retorna as informações do usuário autenticado.
 - **PUT** `/api/me`: Permite que o usuário autenticado edite suas informações.
-- **PATCH** `/api/changePassword`: Permite que o usuário altere sua senha.
+- **PATCH** `/api/change-password`: Permite que o usuário altere sua senha.
 - **POST** `/api/logout`: Realiza o logout do usuário autenticado.
 
 ## Tecnologias Utilizadas

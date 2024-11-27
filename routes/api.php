@@ -13,7 +13,7 @@ Route::middleware(['auth:sanctum'])->group(function () {
 
     Route::post('/logout', [AuthController::class, 'logout']);
     Route::get('/me', [AuthController::class, 'me']);
-    Route::patch('/changePassword', [AuthController::class, 'changePassword']);
+    Route::patch('/change-password', [AuthController::class, 'changePassword']);
 
     Route::put('/me', [AuthController::class, 'updateMe'])->name('user.update');
 
