@@ -136,9 +136,9 @@ git clone https://github.com/iFHA/Selecao-Back-End.git
 ```sh
 cd Selecao-Back-End/
 ```
-3. Renomeie o arquivo Homestead.yaml.example para Homestead.yaml, que fica na pasta raiz do projeto:
+3. crie o arquivo Homestead.yaml
 ```sh
-mv Homestead.yaml.example Homestead.yaml
+cp Homestead.yaml.example Homestead.yaml
 ```
 4. Configure o arquivo Homestead.yaml com os caminhos e detalhes adequados para o seu ambiente, como por exemplo, na linha 7 do arquivo Homestead.yaml ajuste o valor da propriedade "map:" para o caminho absoluto do projeto na sua máquina.
 
