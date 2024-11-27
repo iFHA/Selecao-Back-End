@@ -132,29 +132,33 @@ Este sistema foi desenvolvido com foco em segurança e desempenho, utilizando bo
 ```sh
 git clone https://github.com/iFHA/Selecao-Back-End.git
 ```
-2. Renomeie o arquivo Homestead.yaml.example para Homestead.yaml, que fica na pasta raiz do projeto:
+2. Acesse a pasta do projeto
+```sh
+cd Selecao-Back-End/
+```
+3. Renomeie o arquivo Homestead.yaml.example para Homestead.yaml, que fica na pasta raiz do projeto:
 ```sh
 mv Homestead.yaml.example Homestead.yaml
 ```
-3. Configure o arquivo Homestead.yaml com os caminhos e detalhes adequados para o seu ambiente, como por exemplo, na linha 7 do arquivo Homestead.yaml ajuste o valor da propriedade "map:" para o caminho absoluto do projeto na sua máquina.
+4. Configure o arquivo Homestead.yaml com os caminhos e detalhes adequados para o seu ambiente, como por exemplo, na linha 7 do arquivo Homestead.yaml ajuste o valor da propriedade "map:" para o caminho absoluto do projeto na sua máquina.
 
-4. Inicie a máquina virtual com o comando:
+5. Inicie a máquina virtual com o comando:
 ```sh
 vagrant up
 ```
-5. Acesse a máquina virtual:
+6. Acesse a máquina virtual:
 ```sh
 vagrant ssh
 ```
-6. Dentro da máquina virtual, navegue até o diretório do projeto
+7. Dentro da máquina virtual, navegue até o diretório do projeto
 ```sh
 cd code
 ```
-7. Instale as dependências do projeto:
+8. Instale as dependências do projeto:
 ```sh
 composer install
 ```
-8. Renomeie o arquivo .env.example para .env e configure-o com suas credenciais do banco de dados:
+9. Renomeie o arquivo .env.example para .env e configure-o com suas credenciais do banco de dados:
 ```dosini
 DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
@@ -167,15 +171,15 @@ Gere a chave do projeto
 ```sh
 php artisan key:generate
 ```
-9. Execute as migrações para criar as tabelas necessárias:
+10. Execute as migrações para criar as tabelas necessárias:
 ```sh
 php artisan migrate
 ```
-10. Também pode ser feito um seed após executar as migrations, que irá gerar um usuário admin(email "admin@gmail.com" e senha "password") e alguns comentários gerados pela biblioteca faker
+11. Também pode ser feito um seed após executar as migrations, que irá gerar um usuário admin(email "admin@gmail.com" e senha "password") e alguns comentários gerados pela biblioteca faker
 ```sh
 php artisan db:seed
 ```
-11. Para rodar os testes automatizados com PHPUnit:
+12. Para rodar os testes automatizados com PHPUnit:
 ```sh
 php artisan test
 ```
