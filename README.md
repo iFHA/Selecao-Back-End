@@ -163,6 +163,10 @@ DB_DATABASE=homestead
 DB_USERNAME=homestead
 DB_PASSWORD=secret
 ```
+Gere a chave do projeto
+```sh
+php artisan key:generate
+```
 9. Execute as migrações para criar as tabelas necessárias:
 ```sh
 php artisan migrate
