@@ -106,7 +106,7 @@ php artisan key:generate
 ```sh
 php artisan migrate
 ```
-6. Também pode ser feito um seed após executar as migrations, que irá gerar um usuário admin e alguns comentários gerados pela biblioteca faker
+6. Também pode ser feito um seed após executar as migrations, que irá gerar um usuário admin(email "admin@gmail.com" e senha "password") e alguns comentários gerados pela biblioteca faker
 ```sh
 php artisan db:seed
 ```
@@ -171,7 +171,7 @@ php artisan key:generate
 ```sh
 php artisan migrate
 ```
-10. Também pode ser feito um seed após executar as migrations, que irá gerar um usuário admin e alguns comentários gerados pela biblioteca faker
+10. Também pode ser feito um seed após executar as migrations, que irá gerar um usuário admin(email "admin@gmail.com" e senha "password") e alguns comentários gerados pela biblioteca faker
 ```sh
 php artisan db:seed
 ```
@@ -179,4 +179,61 @@ php artisan db:seed
 ```sh
 php artisan test
 ```
-O servidor de desenvolvimento poderá ser acessado por meio do ip configurado no arquivo Homestad.yaml. Se esse trecho não tiver sido alterado, você terá acesso ao projeto através do ip: 192.168.56.56.
+O servidor de desenvolvimento poderá ser acessado por meio do ip configurado no arquivo Homestead.yaml. Se esse trecho não tiver sido alterado, você terá acesso ao projeto através do ip: 192.168.56.56.
+
+## Extra 2
+## Como Rodar o Projeto Com Docker Compose
+
+1. Clone o projeto
+```sh
+git clone https://github.com/iFHA/Selecao-Back-End.git
+```
+2. Acesse a pasta do projeto
+```sh
+cd Selecao-Back-End/
+```
+3. Crie o Arquivo .env
+```sh
+cp .env.example .env
+```
+4. Atualize as variáveis de ambiente no arquivo .env
+```dosini
+APP_NAME="Sistema de Comentários"
+APP_URL=http://localhost:8989
+
+DB_CONNECTION=mysql
+DB_HOST=db
+DB_PORT=3306
+DB_DATABASE=laravel
+DB_USERNAME=root
+DB_PASSWORD=root
+```
+5. Suba os containers do projeto
+```sh
+docker-compose up -d
+```
+6. Acesse o container
+```sh
+docker-compose exec app bash
+```
+7. Instale as dependências do projeto
+```sh
+composer install
+```
+8. Gere a chave do projeto Laravel
+```sh
+php artisan key:generate
+```
+9. Rode as migrações
+```sh
+php artisan migrate
+```
+10. Também pode ser feito um seed após executar as migrations, que irá gerar um usuário admin(email "admin@gmail.com" e senha "password") e alguns comentários gerados pela biblioteca faker
+```sh
+php artisan db:seed
+```
+11. Para rodar os testes automatizados com PHPUnit:
+```sh
+php artisan test
+```
+O servidor de desenvolvimento poderá ser acessado por meio do endereço http://127.0.0.1:8989
